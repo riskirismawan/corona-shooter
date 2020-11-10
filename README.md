@@ -7,7 +7,7 @@
  
 	buat icon button { diky } ; 
 	
-	background game ; 
+	background game { icak } ; 
 	
 	object icon (player, enemy, bullet) ; 
 
