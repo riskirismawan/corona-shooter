@@ -13,7 +13,7 @@
 
 logic game : 
 
-	player, enemy, bullet movement { riski : 70% } ; 
+	player, enemy, bullet movement { riski : 95% } ; 
 	
 	wave game ; 
 	
