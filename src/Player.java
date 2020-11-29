@@ -1,14 +1,19 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
-// import java.awt.Graphics2D;
-
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
+
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class Player extends GameObject {
 
     Random r = new Random();
     Handler handler;
+
+    String path = getClass().getResource("/icon-coronav2/player.png").getFile();
+    Image image = new ImageIcon(path).getImage();
 
     // private int timer = 10;
 
@@ -20,7 +25,7 @@ public class Player extends GameObject {
     }
 
     public Rectangle getBounds() {
-        return new Rectangle((int) x, (int) y, 32, 32);
+        return new Rectangle((int) x, (int) y, 64, 64);
     }
 
     @Override
@@ -29,7 +34,7 @@ public class Player extends GameObject {
         x += velX;
         y += velY;
 
-        x = Game.clamp(x, 0, Game.WIDTH - 48);
+        x = Game.clamp(x, 0, Game.WIDTH - 80);
         y = Game.clamp(y, 0, Game.HEIGHT - 72);
 
         // if (timer == 0) {
@@ -62,12 +67,15 @@ public class Player extends GameObject {
     @Override
     public void render(Graphics g) {
         // TODO Auto-generated method stub
-        // Graphics2D g2d = (Graphics2D) g;
-        // g.setColor(Color.green);
-        // g2d.draw(getBounds());
 
-        g.setColor(Color.white);
-        g.fillRect((int) x, (int) y, 32, 32);
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.green);
+        g2d.draw(getBounds());
+
+        // g.setColor(Color.white);
+        // g.fillRect((int) x, (int) y, 32, 32);
+
+        g.drawImage(image, (int) x, (int) y, 64, 64, null);
     }
 
 }

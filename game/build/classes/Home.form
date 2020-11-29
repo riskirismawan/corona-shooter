@@ -109,9 +109,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton6"/>
           </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton(getScaledIcon(image, 1.25))"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>

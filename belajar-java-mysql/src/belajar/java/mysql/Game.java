@@ -1,4 +1,5 @@
 package belajar.java.mysql;
+
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -101,8 +102,11 @@ public class Game extends Canvas implements Runnable {
         handler.tick();
 
         if (gameState == STATE.Game) {
-            hud.tick();
-            spawner.tick();
+            if (!paused) {
+                hud.tick();
+                spawner.tick();
+            }
+
         } else if (gameState == STATE.Menu) {
             menu.tick();
         }
@@ -121,6 +125,10 @@ public class Game extends Canvas implements Runnable {
         g.fillRect(0, 0, WIDTH, HEIGHT);
 
         handler.render(g);
+
+        if (paused) {
+            g.drawString("PAUSED", 100, 100);
+        }
 
         if (gameState == STATE.Game) {
             hud.renderer(g);

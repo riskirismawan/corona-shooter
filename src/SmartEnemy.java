@@ -32,17 +32,20 @@ public class SmartEnemy extends GameObject {
         y += velY;
 
         float diffX = x - player.getX() - 8;
-        float diffY = y - player.getY() - 8;
+        // float diffY = y - player.getY() - 8;
         float distance = (float) Math
                 .sqrt((x - player.getX()) * (x - player.getX()) + (y - player.getY()) * (y - player.getY()));
 
         velX = (float) ((-1 / distance) * diffX);
-        velY = (float) ((-1 / distance) * diffY);
+        velY = 1 /* (float) ((-1 / distance) * diffY) */;
 
         // if (y <= 0 || y >= Game.HEIGHT - 56)
         // velY *= -1;
         // if (x <= 0 || x >= Game.WIDTH - 32)
         // velX *= -1;
+
+        if (y >= Game.HEIGHT)
+            handler.removeObject(this);
 
         handler.addObject(new Trail(x, y, ID.Trail, Color.green, 16, 16, 0.05f, handler));
     }

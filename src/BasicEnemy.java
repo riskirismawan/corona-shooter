@@ -1,22 +1,31 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.Graphics2D;
+
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class BasicEnemy extends GameObject {
 
     private Handler handler;
+    HUD hud;
 
-    public BasicEnemy(int x, int y, ID id, Handler handler) {
+    String path /* = getClass().getResource("/icon-coronav2/corona.png").getFile() */;
+    Image image /* = new ImageIcon(path).getImage() */;
+
+    public BasicEnemy(int x, int y, ID id, Handler handler, HUD hud) {
         super(x, y, id);
         // TODO Auto-generated constructor stub
         this.handler = handler;
+        this.hud = hud;
 
         // velX = 5;
         velY = 2;
     }
 
     public Rectangle getBounds() {
-        return new Rectangle((int) x, (int) y, 16, 16);
+        return new Rectangle((int) x, (int) y, 32, 32);
     }
 
     @Override
@@ -24,6 +33,9 @@ public class BasicEnemy extends GameObject {
         // TODO Auto-generated method stub
         x += velX;
         y += velY;
+
+        path = getClass().getResource("/icon-coronav2/corona.png").getFile();
+        image = new ImageIcon(path).getImage();
 
         // if (y <= 0 || y >= Game.HEIGHT - 56)
         // velY *= -1;
@@ -35,17 +47,21 @@ public class BasicEnemy extends GameObject {
 
         collision();
 
-        handler.addObject(new Trail(x, y, ID.Trail, Color.red, 16, 16, 0.05f, handler));
+        // handler.addObject(new Trail(x, y, ID.Trail, Color.red, 16, 16, 0.05f,
+        // handler));
     }
 
     private void collision() {
         for (int i = 0; i < handler.object.size() - 1; i++) {
             GameObject tempObject = handler.object.get(i);
 
-            if (tempObject.getId() == ID.Player || tempObject.getId() == ID.Bullet) {
+            if (/* tempObject.getId() == ID.Player || */ tempObject.getId() == ID.Bullet) {
                 if (getBounds().intersects(tempObject.getBounds())) {
                     handler.removeObject(this);
-                    // handler.removeObject(tempObject);
+                    handler.removeObject(tempObject);
+                    hud.setScore(hud.getScore() + 5);
+                    hud.setCorona(hud.getCorona() + 1);
+                    // System.out.println("Corona mati : " + hud.getCorona());
                 }
             }
         }
@@ -54,8 +70,15 @@ public class BasicEnemy extends GameObject {
     @Override
     public void render(Graphics g) {
         // TODO Auto-generated method stub
-        g.setColor(Color.red);
-        g.fillRect((int) x, (int) y, 16, 16);
+
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.green);
+        g2d.draw(getBounds());
+
+        // g.setColor(Color.red);
+        // g.fillRect((int) x, (int) y, 32, 32);
+
+        g.drawImage(image, (int) x, (int) y, 32, 32, null);
     }
 
 }

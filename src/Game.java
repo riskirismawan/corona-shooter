@@ -41,11 +41,13 @@ public class Game extends Canvas implements Runnable {
         hud = new HUD();
         spawner = new Spawn(handler, hud);
 
-        if (gameState == STATE.Game) {
+        // if (gameState == STATE.Game) {
 
-            handler.addObject(new Player(WIDTH / 2 - 32, WIDTH / 2 + 130, ID.Player, handler));
-            handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
-        }
+        // handler.addObject(new Player(WIDTH / 2 - 64, WIDTH / 2 + 130, ID.Player,
+        // handler));
+        // handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT),
+        // ID.BasicEnemy, handler, hud));
+        // }
 
     }
 
@@ -57,8 +59,19 @@ public class Game extends Canvas implements Runnable {
 
     public synchronized void stop() {
         try {
-            thread.join();
+            // thread.join();
+            thread.stop();
             running = false;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void resume() {
+        try {
+            // thread.join();
+            thread.resume();
+            running = true;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -88,7 +101,7 @@ public class Game extends Canvas implements Runnable {
 
             if (System.currentTimeMillis() - timer > 1000) {
                 timer += 1000;
-                System.out.println("FPS: " + frames + " TICKS: " + updates);
+                // System.out.println("FPS: " + frames + " TICKS: " + updates);
                 frames = 0;
                 updates = 0;
             }

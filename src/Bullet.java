@@ -1,12 +1,19 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.util.Random;
+
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class Bullet extends GameObject {
 
     private Handler handler;
-    Random r = new Random();
+    private Random r = new Random();
+
+    String path = getClass().getResource("/icon-coronav2/bullet.png").getFile();
+    Image image = new ImageIcon(path).getImage();
 
     public Bullet(int x, int y, ID id, Handler handler) {
         super(x, y, id);
@@ -19,7 +26,7 @@ public class Bullet extends GameObject {
     }
 
     public Rectangle getBounds() {
-        return new Rectangle((int) x, (int) y, 8, 8);
+        return new Rectangle((int) x, (int) y, 8, 32);
     }
 
     @Override
@@ -36,14 +43,22 @@ public class Bullet extends GameObject {
         if (y <= 0)
             handler.removeObject(this);
 
-        handler.addObject(new Trail(x, y, ID.Trail, Color.white, 8, 8, 0.1f, handler));
+        // handler.addObject(new Trail(x, y, ID.Trail, Color.white, 8, 8, 0.1f,
+        // handler));
     }
 
     @Override
     public void render(Graphics g) {
         // TODO Auto-generated method stub
-        g.setColor(Color.white);
-        g.fillRect((int) x, (int) y, 8, 8);
+
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.green);
+        g2d.draw(getBounds());
+
+        // g.setColor(Color.white);
+        // g.fillRect((int) x, (int) y, 8, 16);
+
+        g.drawImage(image, (int) x, (int) y, 8, 32, null);
     }
 
 }

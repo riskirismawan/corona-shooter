@@ -30,6 +30,10 @@ public class KeyInput extends KeyAdapter {
                     tempObject.setVelX(-6);
                     keyDown[3] = true;
                 }
+                if (key == KeyEvent.VK_SPACE) {
+                    handler.addObject(new Bullet((int) handler.object.get(i).x + 28, (int) handler.object.get(i).y - 24,
+                            ID.Bullet, handler));
+                }
             }
         }
 

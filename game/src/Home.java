@@ -29,7 +29,7 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
-        ImageIcon icon = new ImageIcon(new URL("images/Cplay.png"));
+//        ImageIcon icon = new ImageIcon(new URL("images/Cplay.png"));
     }
 
     /**
@@ -42,7 +42,7 @@ public class Home extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton(getScaledIcon(image, 1.25));
+        jButton6 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();

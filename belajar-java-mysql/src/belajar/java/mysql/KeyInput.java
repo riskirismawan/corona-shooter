@@ -1,4 +1,5 @@
 package belajar.java.mysql;
+
 import java.awt.event.*;
 // import java.awt.event.KeyAdapter;
 // import java.awt.event.KeyEvent;
@@ -8,8 +9,12 @@ public class KeyInput extends KeyAdapter {
     private Handler handler;
     private boolean[] keyDown = new boolean[4];
 
+    private Game game;
+
     public KeyInput(Handler handler) {
         this.handler = handler;
+
+        game = new Game();
 
         for (int i = 0; i < keyDown.length; i++) {
             keyDown[i] = false;
@@ -30,6 +35,16 @@ public class KeyInput extends KeyAdapter {
                 if (key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT) {
                     tempObject.setVelX(-6);
                     keyDown[3] = true;
+                }
+            }
+        }
+
+        if (key == KeyEvent.VK_P) {
+            if (game.gameState == Game.STATE.Game) {
+                if (game.paused) {
+                    game.paused = false;
+                } else {
+                    game.paused = true;
                 }
             }
         }
