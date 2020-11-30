@@ -11,6 +11,6 @@ package belajar.java.mysql;
  */
 public class Tmp {
     
-    static boolean buttonState=(true);
+    static boolean buttonState =(true);
  
 }

@@ -19,7 +19,11 @@ public class Klik {
     static Klik player = new Klik();
     static Clip clip;
 
-    static String filepath = "E:\\OneDrive - visualize B2C applications\\RISKI RISMAWAN F1D018053\\SEMESTER 5\\PBO\\Project\\NUNEK\\belajar-java-mysql\\effect1.wav";
+    static String filepath = "E:\\OneDrive - visualize B2C applications\\RISKI RISMAWAN F1D018053\\SEMESTER 5\\PBO\\Project\\corona-shooter\\NUNEK\\belajar-java-mysql\\src\\belajar\\java\\effect1.wav";
+    
+    static String explosion = "E:\\OneDrive - visualize B2C applications\\RISKI RISMAWAN F1D018053\\SEMESTER 5\\PBO\\Project\\corona-shooter\\NUNEK\\belajar-java-mysql\\src\\belajar\\java\\Explosion7.wav";
+
+    static String shooting = "E:\\OneDrive - visualize B2C applications\\RISKI RISMAWAN F1D018053\\SEMESTER 5\\PBO\\Project\\corona-shooter\\NUNEK\\belajar-java-mysql\\src\\belajar\\java\\Laser_Shoot11.wav";
 
     public Klik() {
 

@@ -15,6 +15,8 @@ public class BasicEnemy extends GameObject {
     private Game game;
     
     private GameOver gameOver;
+    
+    private Klik klik = new Klik();
 
     Image image;
 
@@ -25,7 +27,7 @@ public class BasicEnemy extends GameObject {
         this.hud = hud;
         this.game = game;
         
-        gameOver = new GameOver(this.game, this.handler, this.hud);
+        gameOver = new GameOver(game, handler, hud);
 
         // velX = 5;
         velY = 2;
@@ -52,6 +54,7 @@ public class BasicEnemy extends GameObject {
             handler.removeObject(this);
 
         collision();
+//        System.out.println(game.gameState);
 
         // handler.addObject(new Trail(x, y, ID.Trail, Color.red, 16, 16, 0.05f,
         // handler));
@@ -63,14 +66,22 @@ public class BasicEnemy extends GameObject {
 
             if (tempObject.getId() == ID.Bullet) {
                 if (getBounds().intersects(tempObject.getBounds())) {
+                    klik.loadMusic(klik.explosion);
+                    klik.clip.start();
+                
                     handler.removeObject(this);
                     handler.removeObject(tempObject);
                     hud.setScore(hud.getScore() + 5);
                     hud.setCorona(hud.getCorona() + 1);
+//                    gameOver.jLabel2.setText("High Score : " + hud.getScore());
+//                    gameOver.jLabel3.setText("Corona : " + hud.getCorona());
 //                    System.out.println("Corona mati : " + hud.getCorona());
                 }
             } else if (tempObject.getId() == ID.Player) {
                 if (getBounds().intersects(tempObject.getBounds())) {
+                    klik.loadMusic(klik.explosion);
+                    klik.clip.start();
+                    
                     handler.removeObject(this);
                     handler.removeObject(tempObject);
                     game.paused = true;

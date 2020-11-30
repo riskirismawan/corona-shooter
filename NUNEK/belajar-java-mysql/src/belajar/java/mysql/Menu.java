@@ -26,7 +26,6 @@ public class Menu extends MouseAdapter {
     private Font pixelMplus;
     private Music musik = new Music();
     private Klik klik = new Klik();
-    private GameMusic gameMusic = new GameMusic();
     
     private Paused paused;
     
@@ -42,25 +41,14 @@ public class Menu extends MouseAdapter {
     private Image title = new ImageIcon(getClass().getResource("/belajar/java/coronashooter.gif")).getImage();
     private Image shootNowTitle = new ImageIcon(getClass().getResource("/belajar/java/shootnow.gif")).getImage();
 
-    public Menu(Game game, Handler handler) {
+    public Menu(Game game, Handler handler, HUD hud) {
         this.game = game;
         this.handler = handler;
+        this.hud = hud;
         paused = new Paused(this.game, this.handler, hud);
         
         musik.loadMusic(musik.filepath);
         musik.clip.start();
-        
-//        if (this.game.gameState == Game.STATE.Menu) {
-//            musik.loadMusic(musik.filepath);
-//            musik.clip.start();
-//        } else if (this.game.gameState == Game.STATE.Game) {
-//            klik.loadMusic(klik.filepath);
-//            klik.clip.start();
-//
-//            musik.clip.stop();
-//            musik.loadMusic(musik.gameplay);
-//            musik.clip.start();
-//        }
 
         try {
             pixelMplus = Font.createFont(Font.TRUETYPE_FONT, new File("PixelMplus10-Regular.ttf")).deriveFont(60f);
@@ -81,7 +69,12 @@ public class Menu extends MouseAdapter {
                 klik.loadMusic(klik.filepath);
                 klik.clip.start();
                 
-                musik.clip.stop();
+                if (Tmp.buttonState == (true)) {
+                    musik.clip.stop();
+                    musik.loadMusic(Music.gameplay);
+                    musik.clip.start();
+                }
+                
                 game.gameState = Game.STATE.Game;
                 handler.addObject(new Player(Game.WIDTH / 2 - 32, Game.HEIGHT - 126, ID.Player, handler));
             }
@@ -132,9 +125,9 @@ public class Menu extends MouseAdapter {
         }
 
         if (game.gameState == Game.STATE.Game) {
-//            gameMusic.loadMusic(GameMusic.gameplay);
-//            gameMusic.clip.start();
             if (!mouseOver(mx, my, game.WIDTH - 60, 15, 25, 35)) {
+                klik.loadMusic(klik.shooting);
+                klik.clip.start();
                 for (int i = 0; i < handler.object.size() - 1; i++) {
                 if (handler.object.get(i).getId() == ID.Player) {
                     handler.addObject(new Bullet((int) handler.object.get(i).x + 28, (int) handler.object.get(i).y - 24,
@@ -143,7 +136,10 @@ public class Menu extends MouseAdapter {
             }
             }
             
+            // pause button
             if (mouseOver(mx, my, game.WIDTH - 60, 15, 25, 35)) {
+                klik.loadMusic(klik.filepath);
+                klik.clip.start();
                 paused.setVisible(true);
                 game.paused = true;
             }

@@ -85,7 +85,7 @@ public class Trophy extends javax.swing.JFrame {
         score.setFont(new java.awt.Font("Ink Free", 1, 18)); // NOI18N
         score.setForeground(new java.awt.Color(255, 255, 255));
         score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        score.setText("jLabel5");
+        score.setText("0");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -146,7 +146,7 @@ public class Trophy extends javax.swing.JFrame {
         corona.setFont(new java.awt.Font("Ink Free", 1, 18)); // NOI18N
         corona.setForeground(new java.awt.Color(255, 255, 255));
         corona.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        corona.setText("jLabel6");
+        corona.setText("0");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -197,6 +197,8 @@ public class Trophy extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(170, 300, 109, 39);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/belajar/java/account.gif"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 440, 360);
 

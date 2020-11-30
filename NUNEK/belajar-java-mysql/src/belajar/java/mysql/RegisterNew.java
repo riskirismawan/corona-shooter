@@ -62,8 +62,6 @@ public class RegisterNew extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -116,8 +114,9 @@ public class RegisterNew extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(900, 675));
-        setUndecorated(true);
+        setMaximumSize(new java.awt.Dimension(770, 620));
+        setMinimumSize(new java.awt.Dimension(770, 620));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jLabel8.setFont(new java.awt.Font("Ink Free", 1, 34)); // NOI18N
@@ -140,6 +139,8 @@ public class RegisterNew extends javax.swing.JFrame {
         jLabel9.setText("CONFIRM ");
         getContentPane().add(jLabel9);
         jLabel9.setBounds(300, 320, 190, 45);
+
+        jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         getContentPane().add(jPasswordField1);
         jPasswordField1.setBounds(240, 360, 300, 50);
 
@@ -148,6 +149,8 @@ public class RegisterNew extends javax.swing.JFrame {
         jLabel11.setText("PASSWORD");
         getContentPane().add(jLabel11);
         jLabel11.setBounds(300, 210, 190, 45);
+
+        jPasswordField2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         getContentPane().add(jPasswordField2);
         jPasswordField2.setBounds(240, 250, 300, 50);
 
@@ -164,30 +167,13 @@ public class RegisterNew extends javax.swing.JFrame {
         jButton1.setBounds(300, 440, 170, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/belajar/java/loginregis.gif"))); // NOI18N
-        jLabel1.setMaximumSize(new java.awt.Dimension(900, 675));
-        jLabel1.setMinimumSize(new java.awt.Dimension(900, 675));
+        jLabel1.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
+        jLabel1.setMinimumSize(new java.awt.Dimension(692, 621));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 40, 700, 580);
+        jLabel1.setBounds(0, 40, 770, 580);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel5.setText("X");
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel6.setText("-");
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-        });
+        jPanel3.setMinimumSize(new java.awt.Dimension(900, 675));
 
         jLabel7.setFont(new java.awt.Font("Ink Free", 1, 36)); // NOI18N
         jLabel7.setText("REGISTER FORM");
@@ -196,29 +182,20 @@ public class RegisterNew extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(229, 229, 229)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 316, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addGap(12, 12, 12))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel5)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jLabel7)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(0, 0, 700, 40);
+        jPanel3.setBounds(0, 0, 770, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -271,8 +248,7 @@ public class RegisterNew extends javax.swing.JFrame {
                     Pesan pesan = new Pesan();
                     pesan.setVisible(true);
                     this.dispose();
-                    // this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-                    // this.setVisible(false);
+                    
 
                 } else {
                     bersih();
@@ -337,8 +313,6 @@ public class RegisterNew extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

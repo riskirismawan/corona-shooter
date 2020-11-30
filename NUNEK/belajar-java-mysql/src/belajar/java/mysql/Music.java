@@ -11,9 +11,9 @@ public class Music {
     static Music player = new Music();
     static Clip clip;
 
-    static String filepath = "E:\\OneDrive - visualize B2C applications\\RISKI RISMAWAN F1D018053\\SEMESTER 5\\PBO\\Project\\NUNEK\\belajar-java-mysql\\disk.wav";
+    static String filepath = "E:\\OneDrive - visualize B2C applications\\RISKI RISMAWAN F1D018053\\SEMESTER 5\\PBO\\Project\\corona-shooter\\NUNEK\\belajar-java-mysql\\src\\belajar\\java\\disk.wav";
     
-    static String gameplay = "E:\\OneDrive - visualize B2C applications\\RISKI RISMAWAN F1D018053\\SEMESTER 5\\PBO\\Project\\NUNEK\\belajar-java-mysql\\gameplay.wav";
+    static String gameplay = "E:\\OneDrive - visualize B2C applications\\RISKI RISMAWAN F1D018053\\SEMESTER 5\\PBO\\Project\\corona-shooter\\NUNEK\\belajar-java-mysql\\src\\belajar\\java\\gameplay.wav";
 
     public Music() {
 

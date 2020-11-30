@@ -17,6 +17,8 @@ public class ZigzagEnemy extends GameObject {
     
     private GameOver gameOver;
     
+    private Klik klik = new Klik();
+    
     private Image image;
     private Random r = new Random();
     private int timer = 50;
@@ -28,7 +30,7 @@ public class ZigzagEnemy extends GameObject {
         this.hud = hud;
         this.game = game;
         
-        gameOver = new GameOver(this.game, this.handler, this.hud);
+        gameOver = new GameOver(game, handler, hud);
 
         int temp = r.nextInt(2);
         if (temp == 0)
@@ -59,6 +61,9 @@ public class ZigzagEnemy extends GameObject {
         else
             timer--;
         
+        if (y >= Game.HEIGHT)
+            handler.removeObject(this);
+        
         collision();
 
 //        handler.addObject(new Trail(x, y, ID.Trail, Color.cyan, 16, 16, 0.05f, handler));
@@ -70,6 +75,9 @@ public class ZigzagEnemy extends GameObject {
 
             if (tempObject.getId() == ID.Bullet) {
                 if (getBounds().intersects(tempObject.getBounds())) {
+                    klik.loadMusic(klik.explosion);
+                    klik.clip.start();
+                    
                     handler.removeObject(this);
                     handler.removeObject(tempObject);
                     hud.setScore(hud.getScore() + 5);
@@ -78,6 +86,9 @@ public class ZigzagEnemy extends GameObject {
                 }
             } else if (tempObject.getId() == ID.Player) {
                 if (getBounds().intersects(tempObject.getBounds())) {
+                    klik.loadMusic(klik.explosion);
+                    klik.clip.start();
+                    
                     handler.removeObject(this);
                     handler.removeObject(tempObject);
                     game.paused = true;

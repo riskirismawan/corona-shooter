@@ -17,6 +17,8 @@ public class SmartEnemy extends GameObject {
     
     private GameOver gameOver;
     
+    private Klik klik = new Klik();
+    
     Image image;
     
 
@@ -27,7 +29,7 @@ public class SmartEnemy extends GameObject {
         this.hud = hud;
         this.game = game;
         
-        gameOver = new GameOver(this.game, this.handler, this.hud);
+        gameOver = new GameOver(game, handler, hud);
 
         for (int i = 0; i < handler.object.size(); i++) {
             if (handler.object.get(i).getId() == ID.Player)
@@ -51,11 +53,11 @@ public class SmartEnemy extends GameObject {
         image = new ImageIcon(getClass().getResource("/belajar/java/corona.png")).getImage();
 
         if (player != null) {
-            float diffX = x - player.getX();
-        // float diffY = y - player.getY() - 8;
+            float diffX = x - player.getX() - 10;
+//         float diffY = y - player.getY() - 8;
             float distance = (float) Math.sqrt((x - player.getX()) * (x - player.getX()) + (y - player.getY()) * (y - player.getY()));
 
-            velX = (float) ((-1 / distance) * diffX);
+            velX = (float) ((-3 / distance) * diffX);
         }
         
         velY = 2 /* (float) ((-1 / distance) * diffY) */;
@@ -78,8 +80,11 @@ public class SmartEnemy extends GameObject {
         for (int i = 0; i < handler.object.size() - 1; i++) {
             GameObject tempObject = handler.object.get(i);
 
-            if (tempObject.getId() == ID.Player || tempObject.getId() == ID.Bullet) {
+            if (tempObject.getId() == ID.Bullet) {
                 if (getBounds().intersects(tempObject.getBounds())) {
+                    klik.loadMusic(klik.explosion);
+                    klik.clip.start();
+                    
                     handler.removeObject(this);
                     handler.removeObject(tempObject);
                     hud.setScore(hud.getScore() + 5);
@@ -88,6 +93,9 @@ public class SmartEnemy extends GameObject {
                 }
             } else if (tempObject.getId() == ID.Player) {
                 if (getBounds().intersects(tempObject.getBounds())) {
+                    klik.loadMusic(klik.explosion);
+                    klik.clip.start();
+                    
                     handler.removeObject(this);
                     handler.removeObject(tempObject);
                     game.paused = true;
