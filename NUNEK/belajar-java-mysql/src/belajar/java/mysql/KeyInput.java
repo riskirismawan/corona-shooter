@@ -13,6 +13,8 @@ public class KeyInput extends KeyAdapter {
     private boolean[] keyDown = new boolean[4];
     private boolean running = true;
     private Paused pause;
+    
+    private Klik klik = new Klik();
 
     public KeyInput(Handler handler, Game game, HUD hud) {
         this.handler = handler;
@@ -41,6 +43,9 @@ public class KeyInput extends KeyAdapter {
                     keyDown[3] = true;
                 }
                 if (key == KeyEvent.VK_SPACE) {
+                    klik.loadMusic(klik.shooting);
+                    klik.clip.start();
+                    
                     handler.addObject(new Bullet((int) handler.object.get(i).x + 28, (int) handler.object.get(i).y - 24,
                             ID.Bullet, handler));
                 }
