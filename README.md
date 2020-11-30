@@ -5,44 +5,44 @@
  
  desain interface :
  
-	buat icon button { diky } ; 
+	buat icon button { diky } ; ✔
 	
-	background game { icak } ; 
+	background game { icak } ; ✔
 	
-	object icon (player, enemy, bullet) ; 
+	object icon (player, enemy, bullet) ; ✔
 
 logic game : 
 
-	player, enemy, bullet movement { riski : 95% } ; 
+	player, enemy, bullet movement { riski } ; ✔
 	
 	wave game ; 
 	
 	score ; 
 	
-	pause ; 
+	pause ; ✔
 	
-	database (akun dan score) ; 
+	database (akun dan score) ; ✔
 	
 
 action button : 
 
-	setting { yan } ; 
+	setting { yan } ; ✔
 	
-	pause ; 
+	pause ; ✔
 	
-	restart ; 
+	restart ; ✔
 	
-	resume ; 
+	resume ; ✔
 	
-	game over ; 
+	game over ; ✔
 	
-	back ; 
+	back ; ✔
 	
-	login & sign up { nunik } ; 
+	login & sign up { nunik } ; ✔
 	
 sound : 
 
-	game play music ; 
+	game play music ; ✔
 	
 	suara nembak ; 
 	
