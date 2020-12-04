@@ -15,9 +15,9 @@ logic game :
 
 	player, enemy, bullet movement { riski } ; ✔
 	
-	wave game ; 
+	wave game ; ✔
 	
-	score ; 
+	score ; ✔
 	
 	pause ; ✔
 	
@@ -44,6 +44,6 @@ sound :
 
 	game play music ; ✔
 	
-	suara nembak ; 
+	suara nembak ; ✔
 	
-	objek hancur ; 
+	objek hancur ; ✔
