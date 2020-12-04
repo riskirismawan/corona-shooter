@@ -136,7 +136,7 @@ public class Game extends Canvas implements Runnable {
         }
 
         if (gameState == STATE.Game) {
-            hud.renderer(g);
+            hud.render(g);
             menu.render(g);
         } else if (gameState == STATE.Menu || gameState == STATE.Help) {
             menu.render(g);

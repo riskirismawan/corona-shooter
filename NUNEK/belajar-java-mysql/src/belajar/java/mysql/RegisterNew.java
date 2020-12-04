@@ -5,6 +5,7 @@
  */
 package belajar.java.mysql;
 
+import java.awt.Graphics;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -16,7 +17,7 @@ import java.lang.Thread.*;
  *
  * @author HP
  */
-public class RegisterNew extends javax.swing.JFrame {
+public class RegisterNew extends javax.swing.JFrame implements Suport{
 
     Connection con;
     Statement stat;
@@ -226,6 +227,7 @@ public class RegisterNew extends javax.swing.JFrame {
         // TODO add your handling code here:
     }// GEN-LAST:event_jTextField1ActionPerformed
 
+    @Override
     public void bersih() {
         jPasswordField2.setText("");
         jPasswordField1.setText("");
@@ -322,4 +324,14 @@ public class RegisterNew extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void tick() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void render(Graphics g) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -43,8 +43,8 @@ public class KeyInput extends KeyAdapter {
                     keyDown[3] = true;
                 }
                 if (key == KeyEvent.VK_SPACE) {
-                    klik.loadMusic(klik.shooting);
-                    klik.clip.start();
+//                    klik.loadMusic(klik.shooting);
+//                    klik.clip.start();
                     
                     handler.addObject(new Bullet((int) handler.object.get(i).x + 28, (int) handler.object.get(i).y - 24,
                             ID.Bullet, handler));

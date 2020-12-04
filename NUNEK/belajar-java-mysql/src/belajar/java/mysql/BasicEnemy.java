@@ -18,7 +18,7 @@ public class BasicEnemy extends GameObject {
     
     private Klik klik = new Klik();
 
-    Image image;
+    private Image image;
 
     public BasicEnemy(int x, int y, ID id, Handler handler, HUD hud, Game game) {
         super(x, y, id);
@@ -33,6 +33,7 @@ public class BasicEnemy extends GameObject {
         velY = 2;
     }
 
+    @Override
     public Rectangle getBounds() {
         return new Rectangle((int) x, (int) y, 32, 32);
     }

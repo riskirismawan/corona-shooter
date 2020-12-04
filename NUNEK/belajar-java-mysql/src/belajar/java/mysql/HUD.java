@@ -7,23 +7,18 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class HUD {
+public class HUD implements Suport{
 
 //    public static float HEALTH = 100, greenValue = 255;
 
     private int score = 0, level = 1, corona = 0;
 
+    @Override
     public void tick() {
-//        HEALTH = Game.clamp(HEALTH, 0, 100);
-//        greenValue = Game.clamp(greenValue, 0, 255);
-//
-//        greenValue = HEALTH * 2;
-
-        // score++;
-
     }
 
-    public void renderer(Graphics g) {
+    @Override
+    public void render(Graphics g) {
         
         Font fnt = new Font("Ink Free", 1, 24);
         g.setFont(fnt);
@@ -36,9 +31,6 @@ public class HUD {
 
         g.drawString("Score: " + score, 15, 30);
         g.drawString("Wave: " + level, 15, 60);
-
-//        g.drawImage(pause, game.WIDTH - 60, 15, 25, 35, null);
-//        g.drawImage(play, game.WIDTH - 60, 65, 25, 35, null);
     }
 
     public void setScore(int score) {
@@ -63,6 +55,11 @@ public class HUD {
 
     public int getCorona() {
         return corona;
+    }
+
+    @Override
+    public void bersih() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

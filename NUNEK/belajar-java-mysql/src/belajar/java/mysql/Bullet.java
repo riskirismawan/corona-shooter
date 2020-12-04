@@ -1,9 +1,9 @@
 
 package belajar.java.mysql;
 
-import java.awt.Color;
+//import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
+//import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.util.Random;
 
@@ -16,8 +16,7 @@ public class Bullet extends GameObject {
     private HUD hud;
     private Random r = new Random();
 
-//    String path = getClass().getResource("/belajar/java/bullet.png").getFile();
-    Image image = new ImageIcon(getClass().getResource("/belajar/java/bullet.png")).getImage();
+    private Image image = new ImageIcon(getClass().getResource("/belajar/java/bullet.png")).getImage();
 
     public Bullet(int x, int y, ID id, Handler handler) {
         super(x, y, id);
@@ -29,6 +28,7 @@ public class Bullet extends GameObject {
         // velY = 5;
     }
 
+    @Override
     public Rectangle getBounds() {
         return new Rectangle((int) x, (int) y, 8, 32);
     }

@@ -34,7 +34,7 @@ public class Koneksi {
         DB.config();
         con = DB.con;
         stat = DB.stm;
-         try {
+        try {
             sql = "INSERT INTO score (nilai,corona,id_player) VALUES ("+ skor +" , "+ corona +" , "+ id +")";
             int i = stat.executeUpdate(sql);
                 if (i != 0) {
@@ -44,7 +44,7 @@ public class Koneksi {
                 }
         }catch (HeadlessException | SQLException e) {
             System.out.println("Skor Gagal Dimasukan" + e.getMessage());
-        }       
+        }
     }
     
     

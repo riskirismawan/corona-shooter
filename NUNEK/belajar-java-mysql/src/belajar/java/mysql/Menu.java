@@ -16,7 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.ImageIcon;
 
-public class Menu extends MouseAdapter {
+public class Menu extends MouseAdapter implements Suport{
 
     private Game game;
     private Handler handler;
@@ -126,8 +126,8 @@ public class Menu extends MouseAdapter {
 
         if (game.gameState == Game.STATE.Game) {
             if (!mouseOver(mx, my, game.WIDTH - 60, 15, 25, 35)) {
-                klik.loadMusic(klik.shooting);
-                klik.clip.start();
+//                klik.loadMusic(klik.shooting);
+//                klik.clip.start();
                 for (int i = 0; i < handler.object.size() - 1; i++) {
                 if (handler.object.get(i).getId() == ID.Player) {
                     handler.addObject(new Bullet((int) handler.object.get(i).x + 28, (int) handler.object.get(i).y - 24,
@@ -161,10 +161,11 @@ public class Menu extends MouseAdapter {
             return false;
     }
 
+    @Override
     public void tick() {
-
     }
 
+    @Override
     public void render(Graphics g) {
         if (game.gameState == Game.STATE.Menu) {
 //            Font fnt = new Font("arial", 1, 80);
@@ -223,6 +224,11 @@ public class Menu extends MouseAdapter {
 //            g2d.drawRect(game.WIDTH - 60, 15, 25, 35);
         }
 
+    }
+
+    @Override
+    public void bersih() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

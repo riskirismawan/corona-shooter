@@ -15,9 +15,6 @@ public class Music {
     
     static String gameplay = "E:\\OneDrive - visualize B2C applications\\RISKI RISMAWAN F1D018053\\SEMESTER 5\\PBO\\Project\\corona-shooter\\NUNEK\\belajar-java-mysql\\src\\belajar\\java\\gameplay.wav";
 
-    public Music() {
-
-    }
 
     public static Music getInstance() {
         return player;

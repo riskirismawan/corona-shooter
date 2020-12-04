@@ -5,7 +5,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.util.Random;
 // import java.awt.Graphics2D;
 
 import java.awt.Rectangle;
@@ -14,10 +13,8 @@ import javax.swing.ImageIcon;
 
 public class Player extends GameObject {
 
-    Random r = new Random();
-    Handler handler;
+    private Handler handler;
     
-//    String path = getClass().getResource("/belajar/java/player.png").getFile();
     Image image = new ImageIcon(getClass().getResource("/belajar/java/player.png")).getImage();
 
     // private int timer = 10;
