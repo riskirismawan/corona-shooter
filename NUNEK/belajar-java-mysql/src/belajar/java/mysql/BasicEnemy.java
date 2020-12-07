@@ -88,6 +88,8 @@ public class BasicEnemy extends GameObject {
                     game.paused = true;
                     game.gameState = Game.STATE.End;
                     gameOver.setVisible(true);
+                    gameOver.jLabel2.setText("Score : " + hud.getScore());
+                    gameOver.jLabel3.setText("Corona : " + hud.getCorona());
 //                    System.out.println("Corona mati : " + hud.getCorona());
                 }
             }

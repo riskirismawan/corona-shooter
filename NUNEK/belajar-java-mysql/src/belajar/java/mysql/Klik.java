@@ -36,10 +36,10 @@ public class Klik {
     public void loadMusic(String filepath) {
         try {
             File musicPath = new File(filepath);
-            System.out.println(musicPath.getAbsolutePath());
+//            System.out.println(musicPath.getAbsolutePath());
 
             if (musicPath.exists()) {
-                System.out.println("Initialized");
+//                System.out.println("Initialized");
                 AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
                 clip = AudioSystem.getClip();
                 clip.open(audioInput);

@@ -51,7 +51,6 @@ public class GameOver extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(400, 300));
         setMinimumSize(new java.awt.Dimension(400, 300));
         setUndecorated(true);
         getContentPane().setLayout(null);
@@ -88,13 +87,13 @@ public class GameOver extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Ink Free", 0, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("High Score : " + hud.getScore());
+        jLabel2.setText("High Score : ??");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(26, 91, 338, 30);
 
         jLabel3.setFont(new java.awt.Font("Ink Free", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Corona : " + hud.getCorona());
+        jLabel3.setText("Corona : ??");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(26, 146, 338, 33);
 
@@ -107,6 +106,9 @@ public class GameOver extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        klik.loadMusic(klik.filepath);
+        klik.clip.start();
+        
         game.gameState = Game.STATE.Menu;
         game.paused = false;
         
@@ -126,6 +128,9 @@ public class GameOver extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        klik.loadMusic(klik.filepath);
+        klik.clip.start();
+        
         for (int i = 0; i < handler.object.size(); i++) {
             handler.object.clear();
         }
@@ -185,8 +190,8 @@ public class GameOver extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    javax.swing.JLabel jLabel2;
+    javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
