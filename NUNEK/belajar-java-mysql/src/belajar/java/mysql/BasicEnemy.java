@@ -46,19 +46,10 @@ public class BasicEnemy extends GameObject {
 
         image = new ImageIcon(getClass().getResource("/belajar/java/corona.png")).getImage();
 
-        // if (y <= 0 || y >= Game.HEIGHT - 56)
-        // velY *= -1;
-        // if (x <= 0 || x >= Game.WIDTH - 32)
-        // velX *= -1;
-
         if (y >= Game.HEIGHT)
             handler.removeObject(this);
 
         collision();
-//        System.out.println(game.gameState);
-
-        // handler.addObject(new Trail(x, y, ID.Trail, Color.red, 16, 16, 0.05f,
-        // handler));
     }
 
     private void collision() {
@@ -74,9 +65,6 @@ public class BasicEnemy extends GameObject {
                     handler.removeObject(tempObject);
                     hud.setScore(hud.getScore() + 5);
                     hud.setCorona(hud.getCorona() + 1);
-//                    gameOver.jLabel2.setText("High Score : " + hud.getScore());
-//                    gameOver.jLabel3.setText("Corona : " + hud.getCorona());
-//                    System.out.println("Corona mati : " + hud.getCorona());
                 }
             } else if (tempObject.getId() == ID.Player) {
                 if (getBounds().intersects(tempObject.getBounds())) {
@@ -90,7 +78,6 @@ public class BasicEnemy extends GameObject {
                     gameOver.setVisible(true);
                     gameOver.jLabel2.setText("Score : " + hud.getScore());
                     gameOver.jLabel3.setText("Corona : " + hud.getCorona());
-//                    System.out.println("Corona mati : " + hud.getCorona());
                 }
             }
         }

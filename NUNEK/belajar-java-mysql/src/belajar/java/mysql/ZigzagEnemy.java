@@ -52,8 +52,6 @@ public class ZigzagEnemy extends GameObject {
         
         image = new ImageIcon(getClass().getResource("/belajar/java/corona.png")).getImage();
 
-//        if (y <= 0 || y >= Game.HEIGHT - 56)
-//            velY *= -1;
         if (timer <= 0 || x <= 0 || x >= Game.WIDTH - 32) {
             velX *= -1;
             timer = 50;
@@ -65,8 +63,6 @@ public class ZigzagEnemy extends GameObject {
             handler.removeObject(this);
         
         collision();
-
-//        handler.addObject(new Trail(x, y, ID.Trail, Color.cyan, 16, 16, 0.05f, handler));
     }
     
     private void collision() {
@@ -96,7 +92,6 @@ public class ZigzagEnemy extends GameObject {
                     gameOver.setVisible(true);
                     gameOver.jLabel2.setText("Score : " + hud.getScore());
                     gameOver.jLabel3.setText("Corona : " + hud.getCorona());
-//                    System.out.println("Corona mati : " + hud.getCorona());
                 }
             }
         }

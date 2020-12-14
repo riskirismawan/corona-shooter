@@ -47,12 +47,6 @@ public class Game extends Canvas implements Runnable {
         
         spawner = new Spawn(handler, hud, this);
 
-//        if (gameState == STATE.Game) {
-//
-//            handler.addObject(new Player(WIDTH / 2 - 32, WIDTH / 2 + 130, ID.Player, handler));
-//            handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
-//        }
-
     }
 
     public synchronized void start() {
@@ -138,7 +132,7 @@ public class Game extends Canvas implements Runnable {
         if (gameState == STATE.Game) {
             hud.render(g);
             menu.render(g);
-        } else if (gameState == STATE.Menu || gameState == STATE.Help) {
+        } else if (gameState == STATE.Menu) {
             menu.render(g);
         }
 

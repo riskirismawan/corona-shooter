@@ -148,15 +148,15 @@ public class LoginNew extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel3MouseClicked
-        klik.loadMusic(klik.filepath);
-        klik.clip.start();
-        System.exit(0);
-    }// GEN-LAST:event_jLabel3MouseClicked
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel4MouseClicked
-        this.setState(JFrame.ICONIFIED);
-    }// GEN-LAST:event_jLabel4MouseClicked
+//    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel3MouseClicked
+//        klik.loadMusic(klik.filepath);
+//        klik.clip.start();
+//        System.exit(0);
+//    }// GEN-LAST:event_jLabel3MouseClicked
+//
+//    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel4MouseClicked
+//        this.setState(JFrame.ICONIFIED);
+//    }// GEN-LAST:event_jLabel4MouseClicked
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:

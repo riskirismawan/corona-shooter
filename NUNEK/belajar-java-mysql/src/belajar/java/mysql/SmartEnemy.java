@@ -35,9 +35,6 @@ public class SmartEnemy extends GameObject {
             if (handler.object.get(i).getId() == ID.Player)
                 player = handler.object.get(i);
         }
-
-        // velX = 5;
-        // velY = 5;
     }
 
     public Rectangle getBounds() {
@@ -60,20 +57,12 @@ public class SmartEnemy extends GameObject {
             velX = (float) ((-3 / distance) * diffX);
         }
         
-        velY = 2 /* (float) ((-1 / distance) * diffY) */;
-
-//        System.out.println(diffX + " : " + distance + " : " + velX);
-        // if (y <= 0 || y >= Game.HEIGHT - 56)
-        // velY *= -1;
-        // if (x <= 0 || x >= Game.WIDTH - 32)
-        // velX *= -1;
+        velY = 2 ;
 
         if (y >= Game.HEIGHT)
             handler.removeObject(this);
         
         collision();
-
-//        handler.addObject(new Trail(x, y, ID.Trail, Color.green, 16, 16, 0.05f, handler));
     }
     
     private void collision() {

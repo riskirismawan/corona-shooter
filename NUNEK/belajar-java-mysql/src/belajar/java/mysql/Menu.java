@@ -79,11 +79,6 @@ public class Menu extends MouseAdapter implements Suport{
                 handler.addObject(new Player(Game.WIDTH / 2 - 32, Game.HEIGHT - 126, ID.Player, handler));
             }
 
-            // help button
-//            if (mouseOver(mx, my, 300, 300, 300, 64)) {
-//                game.gameState = Game.STATE.Help;
-//            }
-
             // quit button
             if (mouseOver(mx, my, game.WIDTH/2 - 300, game.HEIGHT/2, 100, 100)) {
                 klik.loadMusic(klik.filepath);
@@ -116,14 +111,7 @@ public class Menu extends MouseAdapter implements Suport{
             }
         }
 
-        // back button in help
-        if (game.gameState == Game.STATE.Help) {
-            if (mouseOver(mx, my, 300, 400, 300, 64)) {
-                game.gameState = Game.STATE.Menu;
-                return;
-            }
-        }
-
+        // shooting
         if (game.gameState == Game.STATE.Game) {
             if (!mouseOver(mx, my, game.WIDTH - 60, 15, 25, 35)) {
 //                klik.loadMusic(klik.shooting);
@@ -168,24 +156,6 @@ public class Menu extends MouseAdapter implements Suport{
     @Override
     public void render(Graphics g) {
         if (game.gameState == Game.STATE.Menu) {
-//            Font fnt = new Font("arial", 1, 80);
-//            Font fnt2 = new Font("arial", 1, 50);
-//
-//            g.setFont(fnt);
-//            
-//            g.setColor(Color.white);
-//            g.drawString("Menu", 350, 110);
-//
-//            g.setFont(fnt2);
-//            g.drawRect(300, 200, 300, 64);
-//            g.drawString("Play", 405, 245);
-//
-//            g.drawRect(300, 300, 300, 64);
-//            g.drawString("Help", 405, 345);
-//
-//            g.drawRect(300, 400, 300, 64);
-//            g.drawString("Quit", 405, 450);
-
             g.drawImage(background, 0, 0, game.WIDTH, game.HEIGHT, null);
             g.drawImage(title, game.WIDTH/2 - 360, 15, 700, 128, null);
             g.drawImage(shootNow, game.WIDTH/2 - 50, game.HEIGHT/2 - 180, 100, 100, null);
@@ -202,20 +172,6 @@ public class Menu extends MouseAdapter implements Suport{
 //            g2d.drawRect(game.WIDTH/2 - 150, game.HEIGHT/2 + 40, 100, 100);
 //            g2d.drawRect(game.WIDTH/2, game.HEIGHT/2 + 100, 100, 100);
 //            g2d.drawRect(game.WIDTH/2 + 150, game.HEIGHT/2 + 190, 100, 100);
-        } else if (game.gameState == Game.STATE.Help) {
-            Font fnt = new Font("arial", 1, 80);
-            Font fnt2 = new Font("arial", 1, 50);
-
-            g.setFont(fnt);
-
-            g.setColor(Color.white);
-            g.drawString("Help", 350, 110);
-
-            g.setFont(fnt2);
-            g.drawString("Main ajalah", 320, 300);
-
-            g.drawRect(300, 400, 300, 64);
-            g.drawString("Back", 395, 450);
         } else if (game.gameState == Game.STATE.Game) {
             g.drawImage(pause, game.WIDTH - 60, 15, 25, 35, null);
             

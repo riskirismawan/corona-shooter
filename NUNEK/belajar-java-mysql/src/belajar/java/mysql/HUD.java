@@ -22,12 +22,7 @@ public class HUD implements Suport{
         
         Font fnt = new Font("Ink Free", 1, 24);
         g.setFont(fnt);
-//        g.setColor(Color.gray);
-//        g.fillRect(15, 15, 200, 32);
-//        g.setColor(new Color(75, (int) greenValue, 0));
-//        g.fillRect(15, 15, (int) HEALTH * 2, 32);
         g.setColor(Color.white);
-//        g.drawRect(15, 15, 200, 32);
 
         g.drawString("Score: " + score, 15, 30);
         g.drawString("Wave: " + level, 15, 60);
